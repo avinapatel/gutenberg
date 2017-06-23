@@ -131,6 +131,10 @@ HTML_Attribute_List
   })*
   {
     /** <?php
+    if ( 0 === count( $as ) ) {
+      // Calling effectively `array_merge()` causes an error.
+      return array();
+    }
     return call_user_func_array( 'array_merge', $as );
     ?> **/
 
